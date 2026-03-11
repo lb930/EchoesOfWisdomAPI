@@ -3,7 +3,7 @@ from typing import Sequence
 from sqlalchemy import func
 from sqlmodel import Session, select
 
-from app.local_database import engine
+from app.database import engine
 from app.models import Echo
 
 

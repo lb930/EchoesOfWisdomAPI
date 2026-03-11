@@ -11,6 +11,6 @@ class Echo(SQLModel, table=True):
     image: str
     hp: Optional[int] = None
     attack_dmg: Optional[int] = None
-    size: int
-    height: str
+    size: str
+    height: int
     type: str
