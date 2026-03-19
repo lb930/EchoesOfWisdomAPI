@@ -877,12 +877,56 @@
     "type": "monster"
   },
       {
-    "name": "Ice Octo",
+    "name": "Ice Wizzrobe",
+    "base_cost": 5,
+    "description": "A mighty caster of ice magic, this creature warps across the sky, freezing enemies with frigid blasts.",
+    "image": "static/images/Ice_Wizzrobe_-_EoW_icon.png",
+    "health": 38,
+    "attack_dmg": 12,
+    "size": "1 x 1",
+    "height": 2,
+    "type": "monster"
+  },
+      {
+    "name": "Ignizol",
     "base_cost": 2,
-    "description": "This monster freezes foes with icy spit. The cold within it leaks out of its head.",
-    "image": "static/images/Ice_Octo_-_EoW_icon.png",
-    "health": 10,
-    "attack_dmg": 3,
+    "description": "A white Zol with a flame on top of it. Anything it touches is set ablaze.",
+    "image": "static/images/Ignizol_-_EoW_icon.png",
+    "health": 6,
+    "attack_dmg": 4,
+    "size": "1 x 1",
+    "height": 2,
+    "type": "monster"
+  },
+      {
+    "name": "Keese",
+    "base_cost": 1,
+    "description": "A monster resembling a bat. If you hold one aloft and step off a ledge, you can glide a bit.",
+    "image": "static/images/Keese_-_EoW_icon.png",
+    "health": 1,
+    "attack_dmg": 2,
+    "size": "1 x 1",
+    "height": 2,
+    "type": "monster"
+  },
+      {
+    "name": "Leever",
+    "base_cost": 2,
+    "description": "A patient, subterranean monster, it waits for prey, then bursts to the surface, rotating its blades to attack.",
+    "image": "static/images/Leever_-_EoW_icon.png",
+    "health": 12,
+    "attack_dmg": 4,
+    "size": "1 x 1",
+    "height": 2,
+    "type": "monster"
+  },
+      {
+    "name": "Lizalfos",
+    "base_cost": 3,
+    "description": " A hunter by nature, this creature wields a razor-sharp spear. It stabs prey with blinding speed.",
+    "image": "static/images/Lizalfos_-_EoW_icon.png",
+    "health": 14,
+    "attack_dmg": 6,
     "size": "1 x 1",
     "height": 2,
     "type": "monster"
