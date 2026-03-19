@@ -923,12 +923,33 @@
       {
     "name": "Lizalfos",
     "base_cost": 3,
-    "description": " A hunter by nature, this creature wields a razor-sharp spear. It stabs prey with blinding speed.",
+    "description": "A hunter by nature, this creature wields a razor-sharp spear. It stabs prey with blinding speed.",
     "image": "static/images/Lizalfos_-_EoW_icon.png",
     "health": 14,
     "attack_dmg": 6,
     "size": "1 x 1",
     "height": 2,
     "type": "monster"
-  }
+  },
+      {
+    "name": "Lizalfos Lv. 2",
+    "base_cost": 4,
+    "description": "Nimble and lizard-like, this creature is resistant to fire and able to leap into close combat from great distances.",
+    "image": "static/images/Lizalfos_Lv_2-_EoW_icon.png",
+    "health": 20,
+    "attack_dmg": 10,
+    "size": "1 x 1",
+    "height": 2,
+    "type": "monster"
+  }, {
+    "name": "Lizalfos Lv. 3",
+    "base_cost": 5,
+    "description": "This massive Lizalfos is native to the Faron Wetlands. It is resistant to fire and is also at home underwater.",
+    "image": "static/images/Lizalfos_Lv_3_-_EoW_icon.png",
+    "health": 30,
+    "attack_dmg": 14,
+    "size": "2 x 2",
+    "height": 2,
+    "type": "monster"
+  }                                           }
 ]
