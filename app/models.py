@@ -7,7 +7,7 @@ class Echo(SQLModel):
     description: str
     base_cost: int
     image: str
-    hp: Optional[int] = None
+    health: Optional[int] = None
     attack_dmg: Optional[int] = None
     size: str
     height: int

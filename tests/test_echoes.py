@@ -55,3 +55,16 @@ def test_get_objects():
     response = client.get("/echoes/objects/")
     assert response.status_code == 200
     assert all(e["type"] == "object" for e in response.json())
+
+
+def test_get_echo_image_by_name():
+    """Test retrieving an echo's image by name."""
+    response = client.get("/echoes/name/Zol/image", follow_redirects=False)
+    assert response.status_code == 307
+    assert "Zol_-_EoW_icon.png" in response.headers["location"]
+
+
+def test_get_echo_image_by_name_not_found():
+    """Test handling of non-existent echo name for image retrieval."""
+    response = client.get("/echoes/name/doesnotexist/image", follow_redirects=False)
+    assert response.status_code == 404

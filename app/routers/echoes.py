@@ -107,3 +107,22 @@ def get_monster_echoes_endpoint(
         _add_base_url(e, request)
         for e in crud.get_monster_echoes(offset=offset, limit=limit)
     ]
+
+
+@router.get("/image/{echo_name}")
+def get_echo_image_endpoint(echo_name: str, request: Request):
+    """Return the image for a single echo by name.
+
+    Args:
+        echo_name (str): The name of the echo.
+        request (Request): The request object.
+
+    Raises:
+        HTTPException: If the echo is not found.
+    """
+    echo = crud.get_echo_by_name(echo_name)
+    if not echo:
+        raise HTTPException(status_code=404, detail="Echo not found")
+    from fastapi.responses import RedirectResponse
+
+    return RedirectResponse(url=str(request.base_url) + echo.image)
