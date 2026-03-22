@@ -39,7 +39,7 @@ def get_all_echoes(offset: int, limit: int) -> Sequence[Echo]:
     Returns:
         Sequence[Echo]: All Echo records from the database.
     """
-    return _data[offset : offset + limit]
+    return _data[offset:limit]
 
 
 def get_monster_echoes(offset: int, limit: int) -> Sequence[Echo]:
@@ -48,7 +48,7 @@ def get_monster_echoes(offset: int, limit: int) -> Sequence[Echo]:
     Returns:
         Sequence[Echo]: Echo records whose type is "monster".
     """
-    return [e for e in _data if e.type == "monster"][offset : offset + limit]
+    return [e for e in _data if e.type == "monster"][offset:limit]
 
 
 def get_object_echoes(offset: int, limit: int) -> Sequence[Echo]:
@@ -57,4 +57,4 @@ def get_object_echoes(offset: int, limit: int) -> Sequence[Echo]:
     Returns:
         Sequence[Echo]: Echo records whose type is "object".
     """
-    return [e for e in _data if e.type == "object"][offset : offset + limit]
+    return [e for e in _data if e.type == "object"][offset:limit]

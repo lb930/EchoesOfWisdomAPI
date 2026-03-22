@@ -47,7 +47,7 @@ def get_echo_by_name_endpoint(echo_name: str, request: Request) -> dict[str, Any
 
 @router.get("/all/")
 def get_all_echoes_endpoint(
-    request: Request, offset: int = 0, limit: int = Query(default=50, le=50)
+    request: Request, offset: int = 0, limit: int | None = None
 ) -> list[dict[str, Any]]:
     """Return all echoes.
 
@@ -67,7 +67,7 @@ def get_all_echoes_endpoint(
 
 @router.get("/objects/")
 def get_object_echoes_endpoint(
-    request: Request, offset: int = 0, limit: int = Query(default=50, le=50)
+    request: Request, offset: int = 0, limit: int | None = None
 ) -> list[dict[str, Any]]:
     """Return echoes of type "object".
 
@@ -89,7 +89,7 @@ def get_object_echoes_endpoint(
 
 @router.get("/monsters/")
 def get_monster_echoes_endpoint(
-    request: Request, offset: int = 0, limit: int = Query(default=50, le=50)
+    request: Request, offset: int = 0, limit: int | None = None
 ) -> list[dict[str, Any]]:
     """Return echoes of type "monster".
 
