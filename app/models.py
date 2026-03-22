@@ -1,10 +1,8 @@
 from typing import Optional
+from sqlmodel import SQLModel
 
-from sqlmodel import Field, SQLModel
 
-
-class Echo(SQLModel, table=True):
-    id: int | None = Field(default=None, primary_key=True)
+class Echo(SQLModel):
     name: str
     description: str
     base_cost: int

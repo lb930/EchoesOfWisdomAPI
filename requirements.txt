@@ -1,5 +1,6 @@
 fastapi
 sqlmodel
 uvicorn
-psycopg2-binary
-aiofiles
+httpx
+pytest
+black

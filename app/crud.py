@@ -1,10 +1,9 @@
+import json
 from typing import Sequence
-
-from sqlalchemy import func
-from sqlmodel import Session, select
-
-from app.database import engine
 from app.models import Echo
+
+with open("data/echoes.json", encoding="utf-8") as f:
+    _data = [Echo(**e) for e in json.load(f)]
 
 
 def get_echo_by_name(name: str) -> Echo | None:
@@ -18,12 +17,8 @@ def get_echo_by_name(name: str) -> Echo | None:
     Returns:
         Echo | None: The first matching Echo instance, or None if not found.
     """
-    with Session(engine) as session:
-        name = name.replace("_", " ")
-
-        statement = select(Echo).where(func.lower(Echo.name) == name.lower())
-
-        return session.exec(statement).first()
+    name = name.replace("_", " ")
+    return next((e for e in _data if e.name.lower() == name.lower()), None)
 
 
 def get_echo_by_id(id: str) -> Echo | None:
@@ -35,10 +30,7 @@ def get_echo_by_id(id: str) -> Echo | None:
     Returns:
         Echo | None: The first matching Echo instance, or None if not found.
     """
-    with Session(engine) as session:
-        statement = select(Echo).where(Echo.id == id)
-
-        return session.exec(statement).first()
+    return next((e for e in _data if str(e.id) == id), None)
 
 
 def get_all_echoes(offset: int, limit: int) -> Sequence[Echo]:
@@ -47,9 +39,7 @@ def get_all_echoes(offset: int, limit: int) -> Sequence[Echo]:
     Returns:
         Sequence[Echo]: All Echo records from the database.
     """
-    with Session(engine) as session:
-        statement = select(Echo).offset(offset).limit(limit)
-        return session.exec(statement).all()
+    return _data[offset : offset + limit]
 
 
 def get_monster_echoes(offset: int, limit: int) -> Sequence[Echo]:
@@ -58,11 +48,7 @@ def get_monster_echoes(offset: int, limit: int) -> Sequence[Echo]:
     Returns:
         Sequence[Echo]: Echo records whose type is "monster".
     """
-    with Session(engine) as session:
-        statement = (
-            select(Echo).where(Echo.type == "monster").offset(offset).limit(limit)
-        )
-        return session.exec(statement).all()
+    return [e for e in _data if e.type == "monster"][offset : offset + limit]
 
 
 def get_object_echoes(offset: int, limit: int) -> Sequence[Echo]:
@@ -71,8 +57,4 @@ def get_object_echoes(offset: int, limit: int) -> Sequence[Echo]:
     Returns:
         Sequence[Echo]: Echo records whose type is "object".
     """
-    with Session(engine) as session:
-        statement = (
-            select(Echo).where(Echo.type == "object").offset(offset).limit(limit)
-        )
-        return session.exec(statement).all()
+    return [e for e in _data if e.type == "object"][offset : offset + limit]
