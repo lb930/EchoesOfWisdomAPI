@@ -64,7 +64,7 @@ GET /echoes/name/Lynel
 
 ```bash
 git clone https://github.com/lb930/EchoesOfWisdomAPI.git
-cd YOUR_REPO
+cd EchoesOfWisdomAPI
 pip install -r requirements.txt
 uvicorn main:app --reload
 ```
