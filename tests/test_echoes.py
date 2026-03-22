@@ -59,7 +59,7 @@ def test_get_objects():
 
 def test_get_echo_image_by_name():
     """Test retrieving an echo's image by name."""
-    response = client.get("/echoes/name/Zol/image", follow_redirects=False)
+    response = client.get("/echoes/image/zol", follow_redirects=False)
     assert response.status_code == 307
     assert "Zol_-_EoW_icon.png" in response.headers["location"]
 

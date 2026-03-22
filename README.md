@@ -1,10 +1,14 @@
-![Echoes of Wisdom API](echoes-decoration.avif)
+<div align="center">
+  <img src="echoes-decoration.avif" width="200" alt="Echoes of Wisdom API">
+</div>
 
 # Echoes of Wisdom API
 
 **A REST API serving data on all 127 echoes in *The Legend of Zelda: Echoes of Wisdom***
 
-[![CI](https://github.com/lb930/EchoesOfWisdomAPI/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/ci.yml)
+[![CI](https://github.com/lb930/EchoesOfWisdomAPI/actions/workflows/ci.yml/badge.svg)](https://github.com/lb930/EchoesOfWisdomAPI/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/python-3.13-blue)](https://www.python.org/)
+[![Render](https://img.shields.io/badge/deployed%20on-Render-46E3B7?logo=render)](https://echoes-of-wisdom-api.onrender.com)
 
 Built with [FastAPI](https://fastapi.tiangolo.com/) and deployed on [Render](https://render.com/).
 
